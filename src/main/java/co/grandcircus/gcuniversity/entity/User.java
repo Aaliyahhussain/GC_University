@@ -35,7 +35,6 @@ public abstract class User {
 		this.lastName = lastName;
 	}
 
-
 	public abstract boolean isAdmin();
 	
 	public Long getId() {
