@@ -1,6 +1,7 @@
 package co.grandcircus.gcuniversity.entity;
 
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -8,7 +9,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
 
-@MappedSuperclass
+@Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class User {
 
@@ -19,9 +20,7 @@ public abstract class User {
 	private String password;
 	private String firstName;
 	private String lastName;
-	
-	
-	
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub

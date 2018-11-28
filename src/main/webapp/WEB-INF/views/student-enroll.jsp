@@ -14,6 +14,11 @@
         	<!-- remember to make variable called student in controller -->
             <input type="hidden" name="id" value="${ student.id }" />
             <input type="hidden" name="category" value="${ student.category }" />
+            <label class="sr-only" for="semester">Semester</label>
+	  		<option value="">Semester</option>
+	  			<c:forEach items="${ semesters }" var="semester">
+	  				<option <c:if test="${ cat eq param.semester }">selected</c:if>>${ semester }</option>
+	  			</c:forEach>
             <div class="form-group">
                 <label for="name">Name</label>
                 <input class="form-control" id="name" name="name" required min="2" autocomplete="off">

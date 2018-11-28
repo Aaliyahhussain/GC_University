@@ -2,10 +2,11 @@ package co.grandcircus.gcuniversity.entity;
 
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
-@Table
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Admin extends User {
 
 	@Override
