@@ -12,7 +12,7 @@ import co.grandcircus.gcuniversity.entity.User;
 
 @Repository
 @Transactional
-public class UserDao {
+public class AdminDao {
 	
 	@PersistenceContext
 	private EntityManager em;
@@ -21,16 +21,9 @@ public class UserDao {
 		return em.createQuery("FROM User", User.class).getResultList();
 	}
 	
-	public List<User> findByUserName(String userName) {
-		return em.createQuery("FROM User WHERE userName = :userName", User.class)
-				.setParameter("name", userName)
-				.getResultList();
-	}
-	
-	public List<User> findByPassword(String password) {
-		return em.createQuery("FROM User WHERE password = :password", User.class)
-				.setParameter("password", password)
-				.getResultList();
+	public User validateUserExists(String username, String password) {
+		return em.createQuery("FROM User WHERE userName = :username AND password = :password", User.class)
+				.setParameter("username", username).setParameter("password", password).getSingleResult();
 	}
 	
 	public User findById(Long id) {

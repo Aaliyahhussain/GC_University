@@ -1,28 +1,31 @@
 package co.grandcircus.gcuniversity.entity;
 
-import javax.persistence.Column;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Student extends User {
 	
-	@Column 
 	private String phoneNumber;
-	@Column
 	private String address;
+	@OneToMany(mappedBy="student")
+	private List<Enrollment> enrollments;
 
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Student(Long id, String username, String password, String firstName, String lastName, String phoneNumber, String address) {
+	public Student(Long id, String username, String password, String firstName,
+			String lastName, String phoneNumber, String address, List<Enrollment> enrollments) {
 		super();
 		this.phoneNumber = phoneNumber;
 		this.address = address;
+		this.enrollments = enrollments;
 	}
 
 	public Student(Long id, String username, String password, String firstName, String lastName) {
@@ -46,9 +49,12 @@ public class Student extends User {
 		this.address = address;
 	}
 
-	@Override
-	public String toString() {
-		return "Student [phoneNumber=" + phoneNumber + ", address=" + address + "]";
+	public List<Enrollment> getEnrollments() {
+		return enrollments;
+	}
+
+	public void setEnrollments(List<Enrollment> enrollments) {
+		this.enrollments = enrollments;
 	}
 
 	@Override
@@ -56,5 +62,7 @@ public class Student extends User {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	
 
 }
