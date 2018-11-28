@@ -26,7 +26,6 @@ public abstract class User {
 		// TODO Auto-generated constructor stub
 	}
 
-
 	public User(Long id, String username, String password, String firstName, String lastName) {
 		super();
 		this.id = id;
@@ -37,7 +36,7 @@ public abstract class User {
 	}
 
 
-	abstract boolean isAdmin();
+	public abstract boolean isAdmin();
 	
 	public Long getId() {
 		return id;

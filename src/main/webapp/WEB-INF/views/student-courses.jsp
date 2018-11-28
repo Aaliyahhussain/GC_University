@@ -19,7 +19,7 @@
 	  	</thead>
 	    <tbody>
 	    	<!-- change variable name -->
-			<c:forEach items="${ list }" var="course">
+			<c:forEach items="${ courseList }" var="course">
 			 	<tr>
 			     	<td><a href="/courses/${ course.id }">${ course.name }</a></td>
 			      	<td>${ course.semester }</td>

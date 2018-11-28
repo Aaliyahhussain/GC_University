@@ -8,9 +8,15 @@ import javax.persistence.InheritanceType;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Admin extends User {
+	
+	public Admin() {}
+	
+	public Admin(Long id, String username, String password, String firstName, String lastName) {
+		super();
+	}
 
 	@Override
-	boolean isAdmin() {
+	public boolean isAdmin() {
 		// TODO Auto-generated method stub
 		return true;
 	}

@@ -19,7 +19,7 @@
             <label for="username">Username:</label> <input id="username" name="username" value="${ param.username }" required min="2" />
         </p>        
         <p>
-            <label for="password">Password:</label> <input id="password" type="password" name="userPassword" required min="2" />
+            <label for="password">Password:</label> <input id="password" type="password" name="password" required min="2" />
         </p>
         <p>
             <button>Submit</button>

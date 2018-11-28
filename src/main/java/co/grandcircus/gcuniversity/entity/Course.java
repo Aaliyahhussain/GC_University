@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Courses {
+public class Course {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,14 +20,12 @@ public class Courses {
 	@Column
 	private String category;
 	
-	
-	
-	public Courses() {
+	public Course() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Courses(Long id, String name, String category) {
+	public Course(Long id, String name, String category) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -57,12 +55,5 @@ public class Courses {
 	public String toString() {
 		return "Courses [id=" + id + ", name=" + name + ", category=" + category + "]";
 	}
-	
-	
-	
-	
-	
-	
-
 	
 }

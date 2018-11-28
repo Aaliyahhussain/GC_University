@@ -19,8 +19,7 @@ public class Student extends User {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public Student(String phoneNumber, String address) {
+	public Student(Long id, String username, String password, String firstName, String lastName, String phoneNumber, String address) {
 		super();
 		this.phoneNumber = phoneNumber;
 		this.address = address;
@@ -53,7 +52,7 @@ public class Student extends User {
 	}
 
 	@Override
-	boolean isAdmin() {
+	public boolean isAdmin() {
 		// TODO Auto-generated method stub
 		return false;
 	}
