@@ -9,7 +9,22 @@
 </head>
 <body>
 
-	<h1>Hello</h1>
+	<h1>Login</h1>
+    
+    <p class="message">${ message }</p>
+    
+    <!-- change the URL for controller -->
+    <form action="/login" method="post">
+        <p>
+            <label for="username">Username:</label> <input id="username" name="username" value="${ param.username }" required min="2" />
+        </p>        
+        <p>
+            <label for="password">Password:</label> <input id="password" type="password" name="userPassword" required min="2" />
+        </p>
+        <p>
+            <button>Submit</button>
+        </p>
+    </form>
 	
 </body>
 </html>
