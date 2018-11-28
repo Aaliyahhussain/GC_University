@@ -5,18 +5,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import co.grandcircus.gcuniversity.dao.CourseDao;
-import co.grandcircus.gcuniversity.dao.UserDao;
+import co.grandcircus.gcuniversity.dao.AdminDao;
+import co.grandcircus.gcuniversity.dao.StudentDao;
 import co.grandcircus.gcuniversity.entity.Student;
 
 @Controller
 public class StudentController {
 	
 	@Autowired
-	UserDao userDao;
+	StudentDao studentDao;
 	
 	@Autowired
-	CourseDao courseDao;
+	AdminDao adminDao;
 	
 	@RequestMapping("/student-courses")
 	public ModelAndView studentCourses (Student student) {

@@ -1,10 +1,13 @@
 package co.grandcircus.gcuniversity.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,19 +22,23 @@ public class Course {
 	private String name;
 	@Column
 	private String category;
+	@OneToMany(mappedBy="course")
+	private List<Enrollment> enrollments;
 	
 	public Course() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Course(Long id, String name, String category) {
+	public Course(Long id, String name, String category, List<Enrollment> enrollments) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.category = category;
+		this.enrollments = enrollments;
 		
 	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -51,9 +58,13 @@ public class Course {
 		this.category = category;
 	}
 
-	@Override
-	public String toString() {
-		return "Courses [id=" + id + ", name=" + name + ", category=" + category + "]";
+	public List<Enrollment> getEnrollments() {
+		return enrollments;
 	}
+
+	public void setEnrollments(List<Enrollment> enrollments) {
+		this.enrollments = enrollments;
+	}
+
 	
 }
