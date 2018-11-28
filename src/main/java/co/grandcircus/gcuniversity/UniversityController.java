@@ -28,7 +28,7 @@ public class UniversityController {
 		
 		// TODO: check if user exists and if they are admin 
 		if (user.isAdmin()) {
-			return new ModelAndView("admin-courses");
+			return new ModelAndView("admin");
 		} else if (!user.isAdmin()) {
 			ModelAndView mav = new ModelAndView("student-courses");
 			mav.addObject("message", "Welcome, " + user.getFirstName() + "!");
@@ -40,5 +40,5 @@ public class UniversityController {
 			return new ModelAndView("redirect:/", "message", "Sorry, that is not a valid login!");
 		}
 	}
-
+	
 }
